@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo Management App</title>
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="todo-app.css">
+</head>
+
+<body>
+  <main class="TodoMain">
+    <h1 class="TodoPage-Title">My Todo-list</h1>
+
+    <section class="AddTodo">
+      <input class="AddTodo-text" type="text" placeholder="What's next">
+      <input class="AddTodo-date" type="date">
+      <input class="AddTodo-button" type="button" value="Add">
+    </section>
+
+    <section class="TodoSection">
+      <div class="TodoSectionTitle">
+        <p class="TodoSectionTitle-text">Due Today</p>
+        <p class="TodoSectionTitle-remaining">0/4</p>
+      </div>
+      <ul>
+        <li class="TodoItem">
+          <label class="TodoItem">
+            <input class="TodoCheckbox" type="checkbox">
+            <p class="TodoText">Submit SaaS 201 project</p>
+            <p class="OverdueText">Overdue</p>
+          </label>
+        </li>
+        <li class="TodoItem">
+          <div class="Trashcan">
+            <input class="TodoCheckbox" type="checkbox">
+            <p class="TodoText">Call accountant</p>
+            <img src="delete.jpg" alt="delete" height="20" width="17">
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class=" TodoSection">
+      <div class="TodoSectionTitle">
+        <p class="TodoSectionTitle-text">Due Tomorrow</p>
+        <p class="TodoSectionTitle-remaining">0/3</p>
+      </div>
+      <ul>
+        <li class="TodoItem">
+          <label class="TodoItem">
+            <input class="TodoCheckbox" type="checkbox" />
+            <p class="TodoText">Refill groceries</p>
+          </label>
+        </li>
+      </ul>
+    </section>
+
+    <section class="TodoSection">
+      <div class="TodoSectionTitle">
+        <p class="TodoSectionTitle-text">Remaining</p>
+        <p class="TodoSectionTitle-remaining">0/3</p>
+      </div>
+      <ul>
+        <li class="TodoItem">
+          <label class="TodoItem">
+            <input class="TodoCheckbox" type="checkbox" />
+            <p class="TodoText">Type something</p>
+            <p class="DateText">jan 21</p>
+          </label>
+        </li>
+        <li class="TodoItem">
+          <label class="TodoItem">
+            <input class="TodoCheckbox" type="checkbox" />
+            <p class="TodoText">Type something</p>
+            <p class="DateText">jan 22</p>
+          </label>
+        </li>
+        <li class="TodoItem">
+          <label class="TodoItem">
+            <input class="TodoCheckbox" type="checkbox" />
+            <p class="TodoText">Type something</p>
+            <p class="DateText">jan 23</p>
+          </label>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>
