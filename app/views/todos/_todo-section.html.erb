@@ -1,0 +1,19 @@
+<section class="TodoSection">
+  <div class="TodoSectionTitle">
+    <p class="TodoSectionTitle-text"><%= section_title %></p>
+    <p class="TodoSectionTitle-remaining"><%= todos.completed.count %>/<%= todos.count %></p>
+  </div>
+  <ul>
+    <% todos.each do |todo| %>
+      <li class="TodoItem">
+        <label class="TodoItem">
+          <input class="TodoCheckbox" type="checkbox">
+          <p class="TodoText"><%= todo.todo_text %></p>
+          <% if section_title != "Due Today" %>
+            <p class="DateText"><%= todo.due_date.to_s(:short) %></p>
+          <% end %>
+        </label>
+      </li>
+  <% end %>
+  </ul>
+</section>
