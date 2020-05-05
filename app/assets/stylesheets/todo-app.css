@@ -80,6 +80,12 @@ body{
   display: flex;
   margin-bottom: 10px;
   align-items: center;
+  border-radius: 4px;
+  width: 450px;
+}
+
+.TodoItem:hover{
+  background: #F1EDF7;
 }
 
 .TodoCheckbox{
@@ -92,13 +98,15 @@ body{
   color: #726A7E;
   font-size: 12px;
   line-height: 1.4;
+  margin-right: 12px;
 }
 
-.Trashcan{
-  display: flex;
-  background-color: #F1EDF7;
-  border-radius: 4px;
-  width: 177px;
+.TodoItem-delete{
+  visibility: hidden;
+}
+
+.TodoItem:hover .TodoItem-delete{
+  visibility: visible;
 }
 
 .TodoSection-Todo {

@@ -5,26 +5,22 @@
   </div>
   <ul>
     <% todos.each do |todo| %>
-      <% if section_title == "Overdue" and todo.completed == true %>
-      <% else %>
-        <li class="TodoItem">
-          <label class="TodoItem">
-            <% if todo.completed == false %>
-              <input class="TodoCheckbox" type="checkbox">
-              <p class="TodoText"><%= todo.todo_text %></p>
-              <% if section_title != "Due Today" %>
-                <p class="DateText"><%= todo.due_date.to_s(:short) %></p>
-              <% end %>
-            <% else %>
-              <input class="TodoCheckbox" type="checkbox" checked>
-              <p class="TodoText" style=" text-decoration: line-through; "><%= todo.todo_text %></p>
-              <% if section_title != "Due Today" %>
-                <p class="DateText"><%= todo.due_date.to_s(:short) %></p>
-              <% end %>
+      <li>
+        <label class="TodoItem">
+          <%= form_with(url: "todos/#{todo.id}", method: "PUT") do %>
+            <input class="TodoCheckbox" name="completed" type="checkbox" <%= todo.completed ? "checked" : "" %> onclick="this.form.submit()" >
+          <% end %>
+          <p class="TodoText" style='<%= todo.completed ? " text-decoration: line-through; " : "" %>' ><%= todo.todo_text %></p>
+          <% if show_duedate == true %>
+            <p class="DateText"><%= todo.due_date.to_s(:short) %></p>
+          <% end %>
+          <a href="javascript:void(0)" class="TodoItem-delete">
+            <%= form_with(url: "todos/#{todo.id}", method: "delete") do %>
+              <input type="image" src="delete.jpg" height=16px width=13px>
             <% end %>
-          </label>
-        </li>
-      <% end %>
+          </a>
+        </label>
+      </li>
     <% end %>
   </ul>
 </section>
