@@ -8,7 +8,7 @@
       <li>
         <label class="TodoItem">
           <%= form_with(url: "todos/#{todo.id}", method: "PUT") do %>
-            <input class="TodoCheckbox" name="completed" type="checkbox" <%= todo.completed ? "checked" : "" %> onclick="this.form.submit()" >
+            <%= check_box_tag("completed", "1", todo.completed ? true : false , class: "TodoCheckbox", onclick: "this.form.submit()") %>
           <% end %>
           <p class="TodoText" style='<%= todo.completed ? " text-decoration: line-through; " : "" %>' ><%= todo.todo_text %></p>
           <% if show_duedate == true %>
@@ -16,7 +16,7 @@
           <% end %>
           <a href="javascript:void(0)" class="TodoItem-delete">
             <%= form_with(url: "todos/#{todo.id}", method: "delete") do %>
-              <input type="image" src="delete.jpg" height=16px width=13px>
+              <%= image_submit_tag("delete.jpg", class: "TrashImage") %>
             <% end %>
           </a>
         </label>

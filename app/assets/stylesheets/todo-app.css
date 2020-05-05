@@ -5,8 +5,9 @@ body{
   margin-top: 32px;
 }
 
-.image{
-  max-width: 300px;
+.TrashImage{
+  height: 18px;
+  width: 15px;
 }
 
 .TodoPage-Title {
