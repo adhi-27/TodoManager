@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     render plain: User.all.map { |user| user.to_pleasant_string }.join("\n")
   end
 
+  def new
+    render
+  end
+
   def login
     email = params[:email]
     pass = params[:password]
@@ -20,11 +24,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    name = params[:name]
+    fname = params[:fname]
+    lname = params[:lname]
     mail = params[:email]
     pass = params[:password]
-    new_user = User.create!(name: name, email: mail, password: pass)
-    response_text = "The new user is created with id #{new_user.id}"
-    render plain: response_text
+    new_user = User.create!(fname: fname, lname: lname, email: mail, password: pass)
+    redirect_to "/"
   end
 end
