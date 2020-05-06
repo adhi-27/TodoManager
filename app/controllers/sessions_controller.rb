@@ -9,9 +9,10 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:current_user_id] = user.id
-      render plain: "correct"
+      redirect_to "/"
     else
-      render plain: "incorrect"
+      flash[:error] = "Your Email or Password was Ivalid. Please retry."
+      redirect_to new_sessions_path
     end
   end
 

@@ -13,6 +13,10 @@
     <% if @current_user %>
       <p class= "UserHeader">Welcome <%=@current_user.fname %>! <%= link_to "sign-out", destroy_sessions_path, method: "delete" %></p>
     <% end %>
+
+    <% if flash[:error] %>
+      <p class="Flash-error"><%= flash[:error] %> </p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
