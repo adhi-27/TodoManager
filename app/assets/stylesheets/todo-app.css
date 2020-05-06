@@ -52,6 +52,16 @@ body{
   border-radius: 4px;
 }
 
+.UserHeader{
+  padding: 10px;
+  background-color: lightgray;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .TodoSectionTitle {
   display: flex;
   color: #453c52;
