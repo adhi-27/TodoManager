@@ -6,21 +6,6 @@ class UsersController < ApplicationController
   end
 
   def new
-    render
-  end
-
-  def login
-    email = params[:email]
-    pass = params[:password]
-    user = User.find_by(email: email)
-    if user.nil?
-      text = false
-    elsif user.password == pass
-      text = true
-    else
-      text = false
-    end
-    render plain: text
   end
 
   def create
