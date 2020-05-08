@@ -8,7 +8,7 @@
       <li>
         <label class="TodoItem">
           <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
-            <input class="TodoCheckbox" type="checkbox" name="completed" <%= todo.completed ? "checked" : "" %> onclick="this.form.submit()">
+            <%= check_box_tag("completed", "2", todo.completed, class: "TodoCheckbox", onclick: "this.form.submit()" ) %>
           <% end %>
           <p class="TodoText" style='<%= todo.completed ? " text-decoration: line-through; " : "" %>' ><%= todo.todo_text %></p>
           <% if show_duedate %>
